@@ -1,6 +1,6 @@
 ﻿namespace WinformLayer.View
 {
-    partial class FormAthu
+    partial class FormAthe
     {
         /// <summary>
         /// Required designer variable.

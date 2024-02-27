@@ -1,4 +1,4 @@
-﻿namespace WinformLayer.View
+﻿namespace Winform.View.Member
 {
     partial class FormMemberMain
     {
@@ -36,10 +36,11 @@
             countryLable = new Label();
             companyNameLable = new Label();
             cityLable = new Label();
-            orderHistoryBtn = new Button();
             updateProfileBtn = new Button();
             button3 = new Button();
             changePasswordBtn = new Button();
+            orderDataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)orderDataGridView).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(150, 107);
+            label3.Location = new Point(459, 16);
             label3.Name = "label3";
             label3.Size = new Size(33, 19);
             label3.TabIndex = 0;
@@ -72,7 +73,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(150, 154);
+            label4.Location = new Point(459, 63);
             label4.Name = "label4";
             label4.Size = new Size(59, 19);
             label4.TabIndex = 0;
@@ -90,11 +91,12 @@
             // countryLable
             // 
             countryLable.AutoSize = true;
-            countryLable.Location = new Point(272, 154);
+            countryLable.Location = new Point(534, 63);
             countryLable.Name = "countryLable";
             countryLable.Size = new Size(45, 19);
             countryLable.TabIndex = 0;
             countryLable.Text = "label1";
+            countryLable.Click += countryLable_Click;
             // 
             // companyNameLable
             // 
@@ -108,30 +110,21 @@
             // cityLable
             // 
             cityLable.AutoSize = true;
-            cityLable.Location = new Point(272, 107);
+            cityLable.Location = new Point(534, 16);
             cityLable.Name = "cityLable";
             cityLable.Size = new Size(45, 19);
             cityLable.TabIndex = 0;
             cityLable.Text = "label1";
             // 
-            // orderHistoryBtn
-            // 
-            orderHistoryBtn.Location = new Point(12, 12);
-            orderHistoryBtn.Name = "orderHistoryBtn";
-            orderHistoryBtn.Size = new Size(109, 36);
-            orderHistoryBtn.TabIndex = 1;
-            orderHistoryBtn.Text = "Order History";
-            orderHistoryBtn.UseVisualStyleBackColor = true;
-            orderHistoryBtn.Click += this.ViewOrderHistory;
-            // 
             // updateProfileBtn
             // 
-            updateProfileBtn.Location = new Point(12, 54);
+            updateProfileBtn.Location = new Point(12, 16);
             updateProfileBtn.Name = "updateProfileBtn";
             updateProfileBtn.Size = new Size(109, 34);
             updateProfileBtn.TabIndex = 1;
             updateProfileBtn.Text = "Update Profile";
             updateProfileBtn.UseVisualStyleBackColor = true;
+            updateProfileBtn.Click += updateProfileBtn_Click;
             // 
             // button3
             // 
@@ -142,25 +135,36 @@
             button3.TabIndex = 1;
             button3.Text = "Log out";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // changePasswordBtn
             // 
-            changePasswordBtn.Location = new Point(12, 94);
+            changePasswordBtn.Location = new Point(12, 58);
             changePasswordBtn.Name = "changePasswordBtn";
             changePasswordBtn.Size = new Size(109, 55);
             changePasswordBtn.TabIndex = 1;
             changePasswordBtn.Text = "Change Password";
             changePasswordBtn.UseVisualStyleBackColor = true;
+            changePasswordBtn.Click += changePasswordBtn_Click;
             // 
-            // FormMainMember
+            // orderDataGridView
+            // 
+            orderDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            orderDataGridView.Location = new Point(150, 101);
+            orderDataGridView.Name = "orderDataGridView";
+            orderDataGridView.Size = new Size(590, 294);
+            orderDataGridView.TabIndex = 2;
+            orderDataGridView.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // FormMemberMain
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 222);
+            ClientSize = new Size(791, 407);
+            Controls.Add(orderDataGridView);
             Controls.Add(button3);
             Controls.Add(changePasswordBtn);
             Controls.Add(updateProfileBtn);
-            Controls.Add(orderHistoryBtn);
             Controls.Add(countryLable);
             Controls.Add(label4);
             Controls.Add(cityLable);
@@ -169,8 +173,9 @@
             Controls.Add(companyNameLable);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "FormMainMember";
+            Name = "FormMemberMain";
             Text = "FormMainMember";
+            ((System.ComponentModel.ISupportInitialize)orderDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,9 +190,9 @@
         private Label countryLable;
         private Label companyNameLable;
         private Label cityLable;
-        private Button orderHistoryBtn;
         private Button updateProfileBtn;
         private Button button3;
         private Button changePasswordBtn;
+        private DataGridView orderDataGridView;
     }
 }

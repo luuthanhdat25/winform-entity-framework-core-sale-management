@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
-namespace DataAccessLayer.Model
+namespace Winform.Model
 {
     public class Member
     {
@@ -27,5 +28,10 @@ namespace DataAccessLayer.Model
         [Required] 
         [StringLength(30)] 
         public string? Password { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

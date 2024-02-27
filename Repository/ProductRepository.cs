@@ -1,9 +1,9 @@
 using AutomobileWinform.Repository;
-using DataAccessLayer.DBContext;
-using DataAccessLayer.Model;
+using Winform.DBContext;
+using Winform.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore_DataAccessLayer.Repository;
+namespace Winform.Repository;
 
 public class ProductRepository: IRepository<Product, Int32>
 {

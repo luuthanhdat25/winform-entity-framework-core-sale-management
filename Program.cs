@@ -1,7 +1,6 @@
-
-
-using WinformLayer.View;
-using WinformLayer.ViewForm;
+using Winform.Model;
+using Winform.Repository;
+using Winform.View.Member;
 
 namespace View
 {
@@ -16,7 +15,10 @@ namespace View
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMainMember());
+            MemberRepository memberRepository = new MemberRepository(); 
+            Member member = memberRepository.ListAll().First();
+
+            Application.Run(new FormMemberMain(member));
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinformLayer.View
 {
-    public partial class FormAthu : Form
+    public partial class FormAthe : Form
     {
-        public FormAthu()
+        public FormAthe()
         {
             InitializeComponent();
         }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataAccessLayer.Model
+namespace Winform.Model
 {
     public class Order
     {
@@ -29,5 +24,19 @@ namespace DataAccessLayer.Model
 
         [Column(TypeName = "money")]
         public decimal Freight { get; set; }
+
+        public Order(int orderId, Member? member, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight)
+        {
+            OrderId = orderId;
+            Member = member;
+            OrderDate = orderDate;
+            RequiredDate = requiredDate;
+            ShippedDate = shippedDate;
+            Freight = freight;
+        }
+
+        public Order()
+        {
+        }
     }
 }
