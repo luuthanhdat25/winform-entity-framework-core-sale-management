@@ -39,7 +39,7 @@ public class OrderRepository: IRepository<Order, Int32>
         var findObj = dbcontext.Orders.Find(obj.OrderId);
         if (findObj != null)
         {
-            findObj.Member  = findObj.Member;
+            findObj.MemberId  = findObj.MemberId;
             findObj.OrderDate  = findObj.OrderDate;
             findObj.RequiredDate  = findObj.RequiredDate;
             findObj.ShippedDate  = findObj.ShippedDate;

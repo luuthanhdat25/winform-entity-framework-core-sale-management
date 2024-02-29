@@ -1,6 +1,8 @@
+using SaleManagementWinform;
 using Winform.Model;
 using Winform.Repository;
 using Winform.View.Member;
+using WinformLayer.View;
 
 namespace View
 {
@@ -15,10 +17,8 @@ namespace View
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            MemberRepository memberRepository = new MemberRepository(); 
-            Member member = memberRepository.ListAll().First();
 
-            Application.Run(new FormMemberMain(member));
+            Application.Run(new FormAthe());
         }
     }
 }

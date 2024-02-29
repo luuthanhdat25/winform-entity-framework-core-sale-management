@@ -31,8 +31,7 @@ namespace Winform.View.Member
 
         public void LoadOrderList()
         {
-            List<Order> orders = (List<Order>)_orderRepository.ListAll(); ;
-
+            List<Order> orders = GetOderList(); 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("OrderID", typeof(int));
             dataTable.Columns.Add("OrderDate", typeof(DateTime));
@@ -53,6 +52,17 @@ namespace Winform.View.Member
                 dataTable.Rows.Add(newRow);
             }
             orderDataGridView.DataSource = dataTable;
+        }
+
+        private List<Order> GetOderList()
+        {
+            List<Order> orders = new List<Order>();
+            foreach (Order order in (List<Order>)_orderRepository.ListAll())
+            {
+                if(order.MemberId == _member.MemberId)
+                    orders.Add(order);
+            }
+            return orders;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

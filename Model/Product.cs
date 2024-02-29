@@ -7,7 +7,8 @@ namespace Winform.Model
     [Table("Product")]
     public class Product
     {
-        [Key] [Required]
+        [Key] 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
 
         [Required]

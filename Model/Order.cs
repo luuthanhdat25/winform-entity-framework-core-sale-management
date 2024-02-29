@@ -6,11 +6,11 @@ namespace Winform.Model
     public class Order
     {
         [Key]
-        [Required] 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
 
         [Required]
-        public Member? Member { get; set; }
+        public int MemberId { get; set; }
 
         [Required]
         [Column(TypeName = "datetime")]
@@ -25,10 +25,10 @@ namespace Winform.Model
         [Column(TypeName = "money")]
         public decimal Freight { get; set; }
 
-        public Order(int orderId, Member? member, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight)
+        public Order(int orderId, int member, DateTime orderDate, DateTime requiredDate, DateTime? shippedDate, decimal freight)
         {
             OrderId = orderId;
-            Member = member;
+            MemberId = member;
             OrderDate = orderDate;
             RequiredDate = requiredDate;
             ShippedDate = shippedDate;
